@@ -49,6 +49,36 @@ public class PlayerMovementBehaviour : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// These do the same thing as the Input.GetButton If styatements does
+    /// except its functions for buttons
+    /// </summary>
+
+    public void W()
+    {
+        //changes x and going foreward
+        _rigidbody.AddRelativeForce(new Vector3(0, 0, Move), ForceMode.Impulse);
+    }
+
+    public void A()
+    {
+        //rotates to the left
+        transform.Rotate(new Vector3(0, -Turn, 0) * Time.deltaTime * 100, Space.World);
+    }
+
+    public void S()
+    {
+        //moves player backwards depending on the direction facing
+        _rigidbody.position += transform.forward * Time.deltaTime * speed;
+        _rigidbody.AddRelativeForce(new Vector3(0, 0, -Move), ForceMode.Impulse);
+    }
+
+    public void D()
+    {
+        //rotates to the right
+        transform.Rotate(new Vector3(0, Turn, 0) * Time.deltaTime * 100, Space.World);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Killer"))
