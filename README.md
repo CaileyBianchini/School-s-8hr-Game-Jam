@@ -33,3 +33,8 @@ to learn how to configure your installation appropriately.
 Clone the repository and open the solution in Visual Studio. Both the solution
 and project should already be configured and ready to start working with. To
 test this, build and run the provided sample project.
+
+
+
+
+[this]: https://caileybianchini.github.io/School-s-8hr-Game-Jam/Player/
